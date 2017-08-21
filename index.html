@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapitool</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/themen.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Collapsed navigation -->
+            <div class="navbar-header">
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <!-- Main title -->
+                <a class="navbar-brand" href=".html">Mapitool</a>
+            </div>
+            <!-- Expanded navigation -->
+            <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="basic.html">Basic</a>
+                    </li>
+                    <li>
+                        <a href="autocomplete.html">AutoComplete</a>
+                    </li>
+                    <li>
+                        <a href="options.html">Options</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron bs-docs-header text-center">
+        <div class="container">
+            <h1>Mapitool</h1>
+            <p class="lead">Google Maps Api Tool</p>
+        </div>
+    </div>
+    <div class="container">
+
+
+        <h1 id="getting-started">Getting Started</h1>
+        <hr />
+        <h2 id="dependencies">Dependencies</h2>
+        <p>Get an API Key from the <a href="https://console.developers.google.com/apis/dashboard" target="_blank">Google API Console</a>.</p>
+        <pre><code class="html">&lt;!-- mapitool.js --&gt;
+&lt;script src=&quot;https://raw.githubusercontent.com/Faridbabayev001/myMap.js/master/mapitool.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+        <h2 id="install-with-bower">Install on page </h2>
+        <p>Add js file from plugin:</p>
+        <pre><code class="html">&lt;!-- Js --&gt;
+&lt;script src=&quot;js/Map.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+        <h1 id="usage">Usage</h1>
+        <hr />
+        <p>Create your <code>&lt;div&gt;</code> with the <code>#map</code> id.</p>
+        <pre><code class="html">&lt;div&gt; id=&quot;map&quot; style=&quot;width:500px;height:500px&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+        <p>Options can be passed via data attributes or JavaScript.</p>
+        <pre><code class="js">
+new Map("map",
+    {
+        type: 'Basic',
+        apiKey: 'YOUR_API_KEY',
+    }); 
+</code></pre>
+
+    </div>
+    <div class="footer">
+        <div class="container text-center">
+            <p class="text-muted">All Right reserved © 2017</p>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+
+
+</html>

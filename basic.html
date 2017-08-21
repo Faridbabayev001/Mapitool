@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="http://geniuscript.com/img/favicon.ico">
+        <title>Basic map</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/themen.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/near_places.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    </head>
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Main title -->
+                    <a class="navbar-brand" href="index.html">Mapitool</a>
+                </div>
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                    <!-- Main navigation -->
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="basic.html">Basic</a>
+                        </li>
+                        <li>
+                            <a href="autocomplete.html">AutoComplete</a>
+                        </li>
+                        <li >
+                            <a href="options.html">Options</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <section class="jumbotron">
+            <div class="container">
+                <h1>Basic Map Type</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix-top" role="complementary">
+                    <ul class="item bs-sidenav">
+                            <li><strong>Author  :</strong> <a href="https://faridbabayev001.github.io/CV/index.html" target="_blank">Farid Babayev</a></li>                        
+                            <li><strong> Version :</strong> v 2.0</li>
+                            <li><strong>Source: </strong><a href="" target="_blank">View on github</a></li>
+                            <li class="links">
+                                <a href="https://www.facebook.com/Faridbabayev001" target="_blank" class="btn btn-default"><i class="fa fa-facebook"></i></a> 
+                                <a href="https://www.linkedin.com/in/Faridbabayev001/" target="_blank" class="btn btn-default"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://github.com/Faridbabayev001" target="_blank" class="btn btn-default"><i class="fa fa-github"></i></a>
+                            </li>
+                    </ul>
+                </div></div>
+            <div class="col-md-9" role="main">
+                
+            <div class="section-ex">
+                <h1 id="basic-examples">Example</h1>
+                <hr />
+                <div class="bs-docs-example">
+                    <div id='map' style="width: 100%;height:500px"></div>
+                    <br/>
+                </div>
+                <h2 id="standard-map-boxes">How to</h2>                
+                <p class="">HTML:</p>
+                <pre>
+<code class="html">   
+&lt;div style='width: 500px;height:500px' id='map'&gt;&lt;/div&gt;</code>
+                </pre>
+                <p class="">JS:</p>
+                <pre>
+                    <code class="html">    
+ var data = [
+    {
+        lat: 40.3781403,
+        lng: 49.81145420000007,
+        title: 'Marker1',
+        content: 'Marker1'
+    },
+    {
+        lat: 40.9981633,
+        lng: 47.86998259999996,
+        title: 'Marker2',
+        content: 'Marker2'
+    },
+    {
+        lat: 40.3798657,
+        lng: 49.84875779999993,
+        title: '28 May, Bakı, Azərbaycan',
+        content: '28 May, Bakı, Azərbaycan'
+    }
+]
+    new Mapitool("map",
+    {
+        type: 'Basic',
+        apiKey: 'YOUR_API_KEY',
+        cluster: true,
+        markerClick: true
+    },data);</code>
+                </pre>
+               
+            </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container text-center">
+                <p class="text-muted">All Right reserved © 2017</p>
+            </div>
+        </div>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="js/theme.js"></script>
+        <script src="./js/mapitool.js"></script>
+        <script>
+            var data = [
+        {
+            lat: 40.3781403,
+            lng: 49.81145420000007,
+            title: 'Marker1',
+            content: 'Marker1'
+        },
+        {
+            lat: 40.9981633,
+            lng: 47.86998259999996,
+            title: 'Marker2',
+            content: 'Marker2'
+        },
+        {
+            lat: 40.377214,
+            lng: 49.85401000000002,
+            title: 'Marker3',
+            content: 'Marker3'
+        },
+        {
+            lat: 41.3643024,
+            lng: 48.526092800000015,
+            title: 'Marker4',
+            content: 'Marker4'
+        },
+        {
+            lat: 40.40926169999999,
+            lng: 49.86709240000005,
+            title: 'Marker4',
+            content: 'Marker4'
+        },
+        {
+            lat: 40.3798657,
+            lng: 49.84875779999993,
+            title: '28 May, Bakı, Azərbaycan',
+            content: '28 May, Bakı, Azərbaycan'
+        }
+    ]
+                new Mapitool("map",
+            {
+                type: 'Basic',
+                apiKey: 'AIzaSyDkC1kAFSGEdyTfN9wMekqU7vm13HD-42w',
+                cluster: true,
+                markerClick: true
+            },data);
+            </script>
+    </body>
+
+</html>

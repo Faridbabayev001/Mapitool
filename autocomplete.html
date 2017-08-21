@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="http://geniuscript.com/img/favicon.ico">
+    <title>Examples</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/themen.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/near_places.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+</head>
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Collapsed navigation -->
+            <div class="navbar-header">
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <!-- Main title -->
+                <a class="navbar-brand" href="index.html">Mapitool</a>
+            </div>
+            <!-- Expanded navigation -->
+            <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="basic.html">Basic</a>
+                    </li>
+                    <li class="active">
+                        <a href="autocomplete.html">AutoComplete</a>
+                    </li>
+                    <li>
+                        <a href="options.html">Options</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <section class="jumbotron">
+        <div class="container">
+            <h1>AutoComplete Map Type</h1>
+        </div>
+    </section>
+    <div class="container">
+        <div class="col-md-3">
+            <div class="bs-sidebar hidden-print affix-top" role="complementary">
+                <ul class="nav bs-sidenav">
+                    <li class="main active">
+                        <ul class="item">
+                            <li><strong>Author  :</strong> <a href="https://faridbabayev001.github.io/CV/index.html" target="_blank">Farid Babayev</a></li>
+                            <li><strong> Version :</strong> v 2.0</li>
+                            <li><strong>Source: </strong><a href="" target="_blank">View on github</a></li>
+                            <li class="links">
+                                <a href="https://www.facebook.com/Faridbabayev001" target="_blank" class="btn btn-default"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.linkedin.com/in/Faridbabayev001/" target="_blank" class="btn btn-default"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://github.com/Faridbabayev001" target="_blank" class="btn btn-default"><i class="fa fa-github"></i></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9" role="main">
+
+            <div class="section-ex">
+                <h1 id="basic-examples">Example</h1>
+                <hr />
+                <div class="bs-docs-example">
+                    <button id="findMe" class="btn btn-default findMe">Find Me</button>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input id="searcPlace" class="form-control" type="text">
+                        </div>
+                        <div class="col-md-3">
+                            <input id="addr" class="form-control" type="text" placeholder="Address">
+                        </div>
+                        <div class="col-md-3">
+                            <input id="lat" class="form-control" type="text" placeholder="Latitude">
+                        </div>
+                        <div class="col-md-3">
+                            <input id="lng" class="form-control" type="text" placeholder="Longitude">
+                        </div>
+                    </div>
+
+                    <div id='map' style="width: 100%;height:500px"></div>
+                    <br/>
+                </div>
+                <h2 id="standard-map-boxes">How To</h2>
+                <p class="">HTML:</p>
+                <pre>
+<code class="html">
+&lt;!-- Find Me button --&gt;
+&lt;button&gt; id=&quot;findMe&quot;&gt;&lt;/button&gt;t;
+&lt;!-- Search input --&gt;
+&lt;input type='text' id='searcPlace'&gt;
+!-- Address input --&gt;
+&lt;input type='text' id='addr'&gt;
+!--  Latitude input--&gt;
+&lt;input type='text' id='lat'&gt;
+!-- Longitude input --&gt;
+&lt;input type='text' id='lng'&gt;</code>
+                </pre>
+                <p class="">JS:</p>
+                <pre>
+                    <code class="html">    
+                            new Mapitool("map",
+                            {
+                                type: 'AutoComplete',
+                                language: 'en',
+                                apiKey: 'YOUR_API_KEY',
+                                autoComplete: true,
+                                searchInput: 'searcPlace',
+                                findMe: true,
+                                findMeButton: 'findMe',
+                                result: function (address, lat, lng, error) {
+                                    if (error) {
+                                        switch (error.code) {
+                                            case error.PERMISSION_DENIED:
+                                                window.alert("PERMISSION_DENIED");
+                                                break;
+                                            case error.POSITION_UNAVAILABLE:
+                                                window.alert("POSITION_UNAVAILABLE");
+                                                break;
+                                            case error.TIMEOUT:
+                                                window.alert("TIMEOUT");
+                                                break;
+                                            case error.UNKNOWN_ERROR:
+                                                window.alert("UNKNOWN_ERROR");
+                                                break;
+                                        }
+                                    }else {
+                                        document.getElementById('addr').value = address;
+                                        document.getElementById('lat').value = lat;
+                                        document.getElementById('lng').value = lng;
+                                    }
+                                }
+                            });</code>
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container text-center">
+            <p class="text-muted">All Right reserved © 2017</p>
+        </div>
+    </div>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/mapitool.js"></script>
+    <script>
+        new Mapitool("map",
+            {
+                type: 'AutoComplete',
+                language: 'en',
+                apiKey: 'AIzaSyDkC1kAFSGEdyTfN9wMekqU7vm13HD-42w',
+                autoComplete: true,
+                searchInput: 'searcPlace',
+                findMe: true,
+                findMeButton: 'findMe',
+                result: function (address, lat, lng, error) {
+                    if (error) {
+                        switch (error.code) {
+                            case error.PERMISSION_DENIED:
+                                window.alert("PERMISSION_DENIED");
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                window.alert("POSITION_UNAVAILABLE");
+                                break;
+                            case error.TIMEOUT:
+                                window.alert("TIMEOUT");
+                                break;
+                            case error.UNKNOWN_ERROR:
+                                window.alert("UNKNOWN_ERROR");
+                                break;
+                        }
+                    } else {
+                        document.getElementById('addr').value = address;
+                        document.getElementById('lat').value = lat;
+                        document.getElementById('lng').value = lng;
+                    }
+                }
+            });
+    </script>
+
+</body>
+
+</html>
